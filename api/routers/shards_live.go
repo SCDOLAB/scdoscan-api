@@ -419,7 +419,7 @@ func (r *Router) buildShardSnapshot() *shardSnapshot {
 		"id": 0, "name": "shard0", "type": "live", "status": status0, "height": h0,
 		"tps": tps0, "gasPrice": gas0, "gasPriceUnit": "gwei", "gasPriceRaw": gasRaw0, "gasPriceRawUnit": "wei per gas (1e-18 SCDO)", "decimals": shard0Decimals,
 		"gasUsed": used0, "gasLimit": 30000000, "pendingTxs": nil,
-		"avgBlockTime": avgBt0, "lastBlockTime": last0, "chainId": 568,
+		"avgBlockTime": avgBt0, "lastBlockTime": last0, "chainId": 5680,
 		"desc": shardDesc[0],
 		"sources": gin.H{"height": src(fromRPC), "blocks": src(blocksReal), "tps": src(blocksReal),
 			"gasUsed": src(blocksReal), "avgBlockTime": src(blocksReal), "gasPrice": gasSrc, "pendingTxs": "unavailable"},
