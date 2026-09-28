@@ -153,7 +153,7 @@ normalizes them to `/api/v1/nodes` and so on.
 
 | Method | Path | Returns |
 |---|---|---|
-| GET | `/network/summary` | Per-shard height, status, TPS, gas price, average block time for shards 0-4. Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 568, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
+| GET | `/network/summary` | Per-shard height, status, TPS, gas price, average block time for shards 0-4. Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 5680, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
 | GET | `/blocks/latest/allshards` | Latest blocks grouped by shard |
 
 ### Proxies and helpers
