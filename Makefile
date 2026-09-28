@@ -1,0 +1,26 @@
+ll: chart_service scan_server scdo_syncer node_service
+chart_service:
+	go build -o ./build/chart/chart_service ./cmd/chart_service
+#	cp ./cmd/chart_service/cmd/server1.json ./build/chart/
+	#cp ./cmd/chart_service/cmd/server2.json ./build/chart/
+	@echo "Done chart_service building"
+
+scan_server:
+	go build -o ./build/server/scan_server ./cmd/scan_server 
+#	cp ./cmd/scan_server/cmd/server1.json ./build/server/
+	#cp ./cmd/scan_server/cmd/server2.json ./build/server/
+	@echo "Done scan_server building"
+
+node_service:
+	go build -o ./build/node/node_service ./cmd/node_service 
+#	cp ./cmd/node_service/cmd/server1.json ./build/node/
+	#cp ./cmd/node_service/cmd/server2.json ./build/node/
+	@echo "Done node_service building"
+
+scdo_syncer:
+	go build -o ./build/syncer/scdo_syncer ./cmd/scdo_syncer
+#	cp ./cmd/scdo_syncer/cmd/server1.json ./build/syncer/
+	#cp ./cmd/scdo_syncer/cmd/server2.json ./build/syncer/
+	@echo "Done scdo_syncer building"
+
+.PHONY: chart_service scan_server node_service scdo_syncer

@@ -1,0 +1,66 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+*.test
+*.sh
+*.tar
+debug
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+
+!.gitkeep
+
+*.log
+*.logs
+*.log.*
+*.logs.*
+
+scan-api-log*/
+
+*.test
+
+.idea
+
+.vscode
+
+# vendor for golang package manager
+#vendor/*
+#!vendor/vendor.json
+#!vendor/README.md
+bin/
+buildLog/
+output/
+build/
+benchmark/
+scan-api-log/
+output/
+tools/
+
+# Added for the public release: runtime output and local backups
+*.bak*
+chart_service/
+node_service/
+scan-api/
+scdo-syncer/
+/scan_server
+/scdo_syncer
+/repair_receipt
+solc-bin/
+.env
