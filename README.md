@@ -94,7 +94,7 @@ Detailed request/response examples (Chinese): [api.md](api.md).
 
 ### Blocks and transactions
 
-| Method | Path | Parameters | Returns |
+| Method | Path | Parameters | Response |
 |---|---|---|---|
 | GET | `/blocks` | `p`, `ps`, `s` | Block list, newest first |
 | GET | `/block` | `height` + `s`, or `hash` | Block detail |
@@ -109,12 +109,12 @@ Detailed request/response examples (Chinese): [api.md](api.md).
 | GET | `/pendingtxs` | `p`, `ps`, `s` | Pending transactions |
 | GET | `/debts` | `p`, `ps`, `s` | Cross-shard debt list |
 | GET | `/debt` | `debtHash` | Debt detail |
-| GET | `/Avegas` | | Average gas price |
+| GET | `/Avegas` | | Average gas fee per gas unit |
 | GET | `/search` | `content` | Block, tx, account or contract matching `content` |
 
 ### Accounts, contracts, tokens
 
-| Method | Path | Parameters | Returns |
+| Method | Path | Parameters | Response |
 |---|---|---|---|
 | GET | `/accounts` | `p`, `ps`, `s` | Accounts ranked by balance |
 | GET | `/Homeaccounts` | | Top accounts for the home page |
@@ -132,7 +132,7 @@ Detailed request/response examples (Chinese): [api.md](api.md).
 
 ### Nodes and charts
 
-| Method | Path | Parameters | Returns |
+| Method | Path | Parameters | Response |
 |---|---|---|---|
 | GET | `/nodes` | `p`, `ps`, `s` | P2P node list |
 | GET | `/node` | `id` | Node detail |
@@ -151,9 +151,9 @@ normalizes them to `/api/v1/nodes` and so on.
 
 ### Multi-shard (shard 0 + shards 1-4), from `shards_live.go`
 
-| Method | Path | Returns |
+| Method | Path | Response |
 |---|---|---|
-| GET | `/network/summary` | Per-shard height, status, TPS, gas price, average block time for shards 0-4. Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 5680, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
+| GET | `/network/summary` | Per-shard height, status, TPS, gas fee per gas unit, average block time for shards 0-4. Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 5680, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
 | GET | `/blocks/latest/allshards` | Latest blocks grouped by shard |
 
 ### Proxies and helpers
@@ -163,8 +163,8 @@ normalizes them to `/api/v1/nodes` and so on.
 | GET | `/eth_call` | `to`, `data`. Forwards `scdo_call` to `SCAN_SHARD1_RPC` at a fixed height (9240000) |
 | GET | `/debug_trace` | `height`, `hash`. Forwards `debug_traceTransaction` to `SCAN_SHARD4_RPC` |
 | GET | `/status` | API version and a list of endpoints |
-| GET | `/apikey` | **Stub.** Returns a random `scdo_...` key. Keys are not stored or enforced, and no rate limit is applied |
-| POST | `/graphql` | **Stub.** Keyword-matches the query. Only `blockcount` returns real data; `token` returns a fixed sample (`TEST1`) |
+| GET | `/apikey` | **Stub.** Gives a random `scdo_...` key. Keys are not stored or enforced, and no rate limit is applied |
+| POST | `/graphql` | **Stub.** Keyword-matches the query. Only `blockcount` gives real data; `token` gives a fixed sample (`TEST1`) |
 
 ## Known issues (not fixed in this release)
 
