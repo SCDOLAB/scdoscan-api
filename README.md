@@ -1,10 +1,10 @@
 # scdoscan-api
 
 Backend of the [scdoscan.io](https://scdoscan.io) explorer: a MongoDB-backed indexer and
-REST API for SCDO Shard1 (Classic) to SCDO Shard4 (Classic) (go-scdo), plus live SCDO Shard0 (EVM)
+REST API for SCDO Shard1 (Classic), SCDO Shard2 (Classic), SCDO Shard3 (Classic) and SCDO Shard4 (Classic) (go-scdo), plus live SCDO Shard0 (EVM)
 data read from the public Shard0 RPC.
 
-> **Operator / compliance.** scdoscan.io is operated by **9Y9 PTY LTD** (3/251 Blackburn Rd, Mount Waverley VIC 3149 (Melbourne), Australia;
+> **Operator / compliance.** scdoscan.io is operated by **9Y9 PTY LTD** (Melbourne, Australia;
 > ACN 600 445 118, ABN 19 600 445 118). 9Y9 PTY LTD is registered with [AUSTRAC](https://online.apps.austrac.gov.au/vaspr) as a
 > Digital Currency Exchange provider (**DCE100714503-001**, registration valid until
 > 14 March 2029) and is a member of the Australian Financial Complaints Authority
@@ -148,11 +148,11 @@ Detailed request/response examples (Chinese): [api.md](api.md).
 The node routes are registered in `router.go` as `./nodes`, `./node`, `./nodemap`. gin
 normalizes them to `/api/v1/nodes` and so on.
 
-### Multi-shard (shard 0 + shards 1-4), from `shards_live.go`
+### Multi-shard (SCDO Shard0 (EVM), SCDO Shard1 (Classic), SCDO Shard2 (Classic), SCDO Shard3 (Classic) and SCDO Shard4 (Classic)), from `shards_live.go`
 
 | Method | Path | Response |
 |---|---|---|
-| GET | `/network/summary` | Per-shard height, status, TPS, gas fee per gas unit, average block time for shards 0-4. Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 5680, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
+| GET | `/network/summary` | Per-shard height, status, TPS, gas fee per gas unit, average block time for SCDO Shard0 (EVM), SCDO Shard1 (Classic), SCDO Shard2 (Classic), SCDO Shard3 (Classic) and SCDO Shard4 (Classic). Shard 0 is read live from `https://scdoscan.io/rpc/0` (chainId 5680, 18 decimals); shards 1-4 come from MongoDB. Cached for 3 s |
 | GET | `/blocks/latest/allshards` | Latest blocks grouped by shard |
 
 ### Proxies and helpers
