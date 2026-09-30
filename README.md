@@ -6,7 +6,8 @@ data read from the public Shard0 RPC.
 
 > **Operator / compliance.** scdoscan.io is operated by **9Y9 PTY LTD** (3/251 Blackburn Rd, Mount Waverley VIC 3149, Australia;
 > ACN 600 445 118, ABN 19 600 445 118). 9Y9 PTY LTD is registered with [AUSTRAC](https://online.apps.austrac.gov.au/vaspr) as a
-> Digital Currency Exchange provider (**DCE100714503-001**) and is a member of the Australian Financial Complaints Authority
+> Digital Currency Exchange provider (**DCE100714503-001**, registration valid until
+> 14 March 2029) and is a member of the Australian Financial Complaints Authority
 > (**AFCA member 124589**). See the [SCDO compliance page](https://scdoscan.io/compliance.html). Registration does not mean AUSTRAC endorses or approves
 > 9Y9 PTY LTD, SCDO or any product or service. This repository contains open-source software.
 
